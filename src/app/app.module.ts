@@ -4,13 +4,18 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+// firebase
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.configFirebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
