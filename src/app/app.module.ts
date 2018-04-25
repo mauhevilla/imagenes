@@ -18,6 +18,8 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ImageListComponent } from './gallery/image-list/image-list.component';
 import { ImageComponent } from './gallery/image/image.component';
 
+//services
+import {ImageService} from './services/image.service'
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { ImageComponent } from './gallery/image/image.component';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule // imports firebase/storage only needed for storage feature
   ],
-  providers: [],
+  providers: [ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
