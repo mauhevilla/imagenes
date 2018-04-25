@@ -14,12 +14,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { UploadImgesComponent } from './upload-imges/upload-imges.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { ImageListComponent } from './gallery/image-list/image-list.component';
-import { ImageComponent } from './gallery/image/image.component';
+import { GalleryComponent }     from './gallery/gallery.component';
+import { ImageListComponent }   from './gallery/image-list/image-list.component';
+import { ImageComponent }       from './gallery/image/image.component';
+import { ImageDetailComponent } from './gallery/image-detail/image-detail.component';
 
 //services
-import {ImageService} from './services/image.service'
+import {ImageService} from './services/image.service';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import {ImageService} from './services/image.service'
     NavBarComponent, 
     GalleryComponent, 
     ImageListComponent, 
-    ImageComponent
+    ImageComponent, ImageDetailComponent
   ],
   imports: [
     BrowserModule,
