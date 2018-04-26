@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, Component } from '@angular/core';
+import { GalleryComponent }     from './gallery/gallery.component';
+import { AbautComponent } from './abaut/abaut.component';
+import { ContactComponent } from './contact/contact.component';
 
 import { AppComponent } from './app.component';
 
@@ -14,7 +16,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { UploadImgesComponent } from './upload-imges/upload-imges.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { GalleryComponent }     from './gallery/gallery.component';
+
 import { ImageListComponent }   from './gallery/image-list/image-list.component';
 import { ImageComponent }       from './gallery/image/image.component';
 import { ImageDetailComponent } from './gallery/image-detail/image-detail.component';
@@ -23,6 +25,9 @@ import { ImageDetailComponent } from './gallery/image-detail/image-detail.compon
 import {ImageService} from './services/image.service';
 
 
+//routas
+import {routes} from './app.routes';
+
 @NgModule({
   declarations: [
     AppComponent,    
@@ -30,14 +35,17 @@ import {ImageService} from './services/image.service';
     NavBarComponent, 
     GalleryComponent, 
     ImageListComponent, 
-    ImageComponent, ImageDetailComponent
+    ImageComponent, ImageDetailComponent, AbautComponent, ContactComponent,
+
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.configFirebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage feature
+    AngularFireStorageModule, // imports firebase/storage only needed for storage feature
+    routes
+    
   ],
   providers: [ImageService],
   bootstrap: [AppComponent]
