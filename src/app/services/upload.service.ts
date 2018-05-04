@@ -9,7 +9,7 @@ import { Upload } from '../directives/upload';
 @Injectable()
 export class UploadService {
 
-  private basePath:string = '/uploads';
+  private basePath:string = '/images';
   uploads: AngularFirestoreCollection<Upload[]>;
   constructor(private af: AngularFirestore, private db: AngularFireDatabase) { }
 
@@ -31,6 +31,7 @@ export class UploadService {
         // upload success
         upload.url = uploadTask.snapshot.downloadURL
         upload.name = upload.file.name
+        
         this.saveFileData(upload)
       }
     );

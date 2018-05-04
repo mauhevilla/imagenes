@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 // traigo firestore
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
@@ -14,14 +13,17 @@ import * as _ from "lodash";
   templateUrl: './upload-imges.component.html',
   styleUrls: ['./upload-imges.component.css']
 })
-export class UploadImgesComponent implements OnInit {
+export class UploadImgesComponent implements OnInit
+{
 
   items: Observable<any[]>;
   selectedFiles: FileList;
   currentUpload: Upload;
 
-  constructor(db: AngularFirestore,private upSvc: UploadService) { 
-    this.items = db.collection('items').valueChanges(); }
+  constructor(db: AngularFirestore,private upSvc: UploadService) 
+  { 
+    this.items = db.collection('items').valueChanges();
+   }
 
   ngOnInit() {
   }
@@ -34,7 +36,7 @@ detectFiles(event) {
 uploadSingle() {
   let file = this.selectedFiles.item(0)
   this.currentUpload = new Upload(file);
-  this.upSvc.pushUpload(this.currentUpload)
+  this.upSvc.pushUpload(this.currentUpload);
 }
 
 uploadMulti() {
@@ -42,7 +44,7 @@ uploadMulti() {
   let filesIndex = _.range(files.length)    
      _.each(filesIndex, (idx) => {
     this.currentUpload = new Upload(files[idx]);
-    this.upSvc.pushUpload(this.currentUpload)})
+    this.upSvc.pushUpload(this.currentUpload)});
 }
 
 

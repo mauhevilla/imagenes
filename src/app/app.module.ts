@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 // comp propios
 
 import { UploadImgesComponent } from './upload-imges/upload-imges.component';
@@ -23,7 +24,7 @@ import { ImageDetailComponent } from './gallery/image-detail/image-detail.compon
 
 //services
 import {ImageService} from './services/image.service';
-
+import {UploadService} from './services/upload.service';
 
 //routas
 import {routes} from './app.routes';
@@ -35,7 +36,8 @@ import {routes} from './app.routes';
     NavBarComponent, 
     GalleryComponent, 
     ImageListComponent, 
-    ImageComponent, ImageDetailComponent, AbautComponent, ContactComponent,
+    ImageComponent, ImageDetailComponent,
+    AbautComponent, ContactComponent,
 
   ],
   imports: [
@@ -44,10 +46,11 @@ import {routes} from './app.routes';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage feature
+    AngularFireDatabaseModule,
     routes
     
   ],
-  providers: [ImageService],
+  providers: [ImageService,UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
