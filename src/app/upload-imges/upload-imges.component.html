@@ -16,7 +16,7 @@
     <label>
       <input type="file" (change)="detectFiles($event)">
     </label>
-    <button  (click)="uploadSingle()">
+    <button [disabled]="!selectedFiles" (click)="uploadSingle()">
       Upload Single
     </button>
 
