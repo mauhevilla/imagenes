@@ -10,7 +10,7 @@ export const environment = {
     authDomain: "imagenes-53dfa.firebaseapp.com",
     databaseURL: "https://imagenes-53dfa.firebaseio.com",
     projectId: "imagenes-53dfa",
-    storageBucket: "",
+    storageBucket: "imagenes-53dfa.appspot.com",
     messagingSenderId: "520524407157"
   }
 };
