@@ -28,4 +28,5 @@ export class ContactComponent implements OnInit {
   onSelect(miUploadImage :Upload){
     this.selectedUpload=miUploadImage;
   }
+  
 }

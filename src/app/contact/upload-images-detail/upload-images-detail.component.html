@@ -5,8 +5,11 @@
           <img [src]="selectedUpload.url" class="img-responsive">
       </div>
         <div class="col-sm-4 col-xs-12">
-          <h1>{{selectedUpload.name}}</h1>
-          <h1>{{selectedUpload.url}}</h1>
+          <h2>{{selectedUpload.name}}</h2>
+          <h2>{{selectedUpload.url}}</h2>
+          <a class="btn btn-danger text-white " (click)="onDelete2(selectedUpload)">Borrar
+            <i class="fas fa-trash-alt"></i>
+        </a>  
         </div>
       </div>
     </div> 
