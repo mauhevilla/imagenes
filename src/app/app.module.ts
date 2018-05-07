@@ -14,9 +14,11 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 // comp propios
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { UploadImgesComponent } from './upload-imges/upload-imges.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { UploadImagesDetailComponent } from './contact/upload-images-detail/upload-images-detail.component';
+import { UploadImageComponent } from './contact/upload-image/upload-image.component';
 
 import { ImageListComponent }   from './gallery/image-list/image-list.component';
 import { ImageComponent }       from './gallery/image/image.component';
@@ -29,6 +31,7 @@ import {UploadService} from './services/upload.service';
 //routas
 import {routes} from './app.routes';
 
+
 @NgModule({
   declarations: [
     AppComponent,    
@@ -37,7 +40,7 @@ import {routes} from './app.routes';
     GalleryComponent, 
     ImageListComponent, 
     ImageComponent, ImageDetailComponent,
-    AbautComponent, ContactComponent,
+    AbautComponent, ContactComponent, UploadImagesDetailComponent, UploadImageComponent,
 
   ],
   imports: [

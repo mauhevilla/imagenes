@@ -1,0 +1,13 @@
+<div *ngIf="selectedUpload">
+    <div class="container image-detail">
+      <div class="row">
+        <div class="col-sm-8 col-xs-12">
+          <img [src]="selectedUpload.url" class="img-responsive">
+      </div>
+        <div class="col-sm-4 col-xs-12">
+          <h1>{{selectedUpload.name}}</h1>
+          <h1>{{selectedUpload.url}}</h1>
+        </div>
+      </div>
+    </div> 
+</div>

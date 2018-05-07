@@ -1,3 +1,10 @@
-<p>
-  contact works!
-</p>
+<app-upload-images-detail [selectedUpload]="selectedUpload" ></app-upload-images-detail>
+
+<div class="container">
+    <div class="row">
+        <app-upload-image *ngFor="let upload of uploadimageList" 
+          [upload]="upload" 
+          (click)="onSelect(upload)">          
+        </app-upload-image>
+    </div> 
+</div>

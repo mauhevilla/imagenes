@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import {AngularFireDatabase} from 'angularfire2/database';
+import {AngularFireDatabase,AngularFireList} from 'angularfire2/database';
 import {AngularFirestore,AngularFirestoreCollection} from 'angularfire2/firestore';
 import * as firebase from 'firebase';
 // la clase
@@ -11,9 +11,16 @@ export class UploadService {
 
   private basePath:string = '/images';
   uploads: AngularFirestoreCollection<Upload[]>;
-  constructor(private af: AngularFirestore, private db: AngularFireDatabase) { }
+  imageList: AngularFireList <any>;
+  
+  constructor(private af: AngularFirestore, 
+              private db: AngularFireDatabase) { }
 
   // mis metodos
+  getImages(){
+    return this.imageList=this.db.list('images');
+  }
+
   pushUpload(upload: Upload) {
     let storageRef = firebase.storage().ref();
     let uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`).put(upload.file);   
@@ -30,13 +37,11 @@ export class UploadService {
       () => {
         // upload success
         upload.url = uploadTask.snapshot.downloadURL
-        upload.name = upload.file.name
-        
+        upload.name = upload.file.name        
         this.saveFileData(upload)
       }
     );
   }
-
  
   // Writes the file details to the realtime db
   private saveFileData(upload: Upload) {
